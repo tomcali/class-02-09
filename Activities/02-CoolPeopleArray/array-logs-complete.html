@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array Printing</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script>
+
+    function titleCase(str) {  
+      str = str.toLowerCase().split(' ');
+
+      for(var i = 0; i < str.length; i++){
+        str[i] = str[i].split('');
+        str[i][0] = str[i][0].toUpperCase(); 
+        str[i] = str[i].join('');
+      }
+      return str.join(' ');
+    }
+
+    // Use this Array
+    var coolPeople = ["bruce lee", "arnold schwarzenegger", "will smith", "esther", "marie curie", "joan of arc"];
+
+    // Then use console.log to print each of the names listed inside.
+    // ...
+    console.log('----- brute force -----');
+    console.log(titleCase(coolPeople[0]));
+    console.log(titleCase(coolPeople[1]));
+    console.log(titleCase(coolPeople[2]));
+    console.log(titleCase(coolPeople[3]));
+    console.log(titleCase(coolPeople[4]));
+    console.log(titleCase(coolPeople[5]));
+    console.log();
+    console.log('----- with a loop -----');
+    for (var i = 0; i < coolPeople.length; i++) {
+      console.log(titleCase(coolPeople[i]));
+    }
+
+// now let's try writing to the screen
+   for (var i = 0; i < coolPeople.length; i++) {
+      document.write('<br />', titleCase(coolPeople[i]));
+    }    
+
+
+    </script>
+
+  </body>
+</html>

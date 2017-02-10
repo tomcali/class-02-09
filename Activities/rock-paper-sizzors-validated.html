@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array Printing</title>
+  </head>
+  <body>
+
+    <h1>Rock-Paper-Sizzors</h1>
+    <p id=#user>Initial User Value</p>
+    <p id=#robot>Initial Robot Value</p>
+
+    <script>
+      function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+           }
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        }
+      var userWins = 0;
+      var robotWins = 0;
+      for (var i = 0; i < 5; i++) {
+
+        <form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+          Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+        </form>
+
+        var user = prompt('Type r, p, or s');
+     	  var robotint = getRandomInt(1,3);
+        var robot = '';
+        if (robotint === 1) {
+          robot = 'r';
+        } 
+        else if (robotint === 2) {
+          robot = 'p';
+        } 
+        else {
+          robot = 's';
+        }
+        console.log('trial number: ',i)
+        console.log('user pick: ', user)
+        console.log('robot integer', robotint)
+        console.log('robot pick: ', robot)
+        
+        if (((user === 'r') && (robot === 'p'))||
+          ((user === 'p') && (robot === 's')) || 
+          ((user === 's') && (robot === 'r'))) 
+          robotWins = robotWins + 1
+        if (((user === 'r') && (robot === 's'))||
+          ((user === 'p') && (robot === 'r')) || 
+          ((user === 's') && (robot === 'p'))) 
+          userWins = userWins + 1
+      }
+    console.log('userWins: ', userWins)
+    console.log('robotWins', robotWins)
+
+
+    </script>
+  </body>  
+</html>

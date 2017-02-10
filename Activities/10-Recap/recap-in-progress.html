@@ -22,11 +22,29 @@
       var entireClass = [studentsRow1, studentsRow2, studentsRow3];
 
 
+
+      for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < entireClass[i].length; j++)
+           document.write('<br />', entireClass[i][j])
+      }
+
+
       // How do we print out every single student in Row 1?
-
-
+      document.write('<p><br />')
+      for (var j = 0; j < entireClass[0].length; j++) {
+        document.write('   ', entireClass[0][j])
+      }
+      document.write('</p>')
+      
       // How do we print out every student in Row 2 whose first name begins with J?
-
+      document.write('<p><br />')
+      for (var j = 0; j < entireClass[1].length; j++) {
+        firstLetter = entireClass[1][j].split('')[0];
+        if (firstLetter === 'J' ) {
+          document.write('   ', entireClass[1][j])
+        }
+      }
+      document.write('</p>')
 
       // Using the RCBclass array, how do we access the second student in row 3?
 
